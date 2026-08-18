@@ -8,11 +8,11 @@ interface SiteNavbarProps {
 }
 
 const SiteNavbar: React.FC<SiteNavbarProps> = ({
-  downloadHref = "#download",
+  downloadHref = "https://github.com/Skopio-app/desktop-releases/releases/download/v0.1.19/Skopio_0.1.19_aarch64.dmg",
   githubHref = "https://github.com/Skopio-app/skopio",
 }) => {
   return (
-    <header className="h-27.25 w-full bg-white" id="top">
+    <header className="site-navbar sticky top-0 z-50 h-27.25 w-full" id="top">
       <nav
         aria-label="Primary navigation"
         className="mx-auto flex h-full w-full max-w-360 items-start px-5 pt-6.5 sm:px-8 lg:pr-57.75 lg:pl-17.5"
@@ -45,7 +45,7 @@ const SiteNavbar: React.FC<SiteNavbarProps> = ({
             <Button
               asChild
               variant="secondary"
-              className="h-11 gap-3 rounded-lg bg-[#d9d9d9] px-4 text-base font-semibold text-black hover:bg-[#cfcfcf] focus-visible:ring-black/30 sm:h-[58px] sm:w-[187px] sm:px-6"
+              className="h-11 gap-3 rounded-lg bg-[#d9d9d9] px-4 text-base font-semibold text-black hover:bg-[#cfcfcf] focus-visible:ring-black/30 sm:h-14.5 sm:w-46.75 sm:px-6"
             >
               <a href={downloadHref}>
                 <SiApple className="size-6 text-white sm:size-7" />

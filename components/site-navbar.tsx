@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 interface SiteNavbarProps {
   downloadHref?: string;
   githubHref?: string;
-};
+}
 
 const SiteNavbar: React.FC<SiteNavbarProps> = ({
   downloadHref = "#download",
@@ -30,7 +30,7 @@ const SiteNavbar: React.FC<SiteNavbarProps> = ({
             <Button
               asChild
               size="icon"
-              className="size-11 rounded-lg bg-black text-white hover:bg-zinc-800 focus-visible:ring-black/30 sm:size-[50px]"
+              className="size-11 rounded-lg bg-black text-white hover:bg-zinc-800 focus-visible:ring-black/30 sm:size-12.5"
             >
               <a
                 href={githubHref}
@@ -57,6 +57,6 @@ const SiteNavbar: React.FC<SiteNavbarProps> = ({
       </nav>
     </header>
   );
-}
+};
 
 export default SiteNavbar;

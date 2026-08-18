@@ -45,11 +45,11 @@ const SiteNavbar: React.FC<SiteNavbarProps> = ({
             <Button
               asChild
               variant="secondary"
-              className="h-11 gap-3 rounded-lg bg-[#d9d9d9] px-4 text-base font-semibold text-black hover:bg-[#cfcfcf] focus-visible:ring-black/30 sm:h-14.5 sm:w-46.75 sm:px-6"
+              className="size-11 gap-3 rounded-lg bg-[#d9d9d9] p-0 text-base font-semibold text-black hover:bg-[#cfcfcf] focus-visible:ring-black/30 min-[360px]:h-11 min-[360px]:w-auto min-[360px]:px-4 sm:h-14.5 sm:w-46.75 sm:px-6"
             >
-              <a href={downloadHref}>
+              <a href={downloadHref} aria-label="Download Skopio">
                 <SiApple className="size-6 text-white sm:size-7" />
-                <span>Download</span>
+                <span className="hidden min-[360px]:inline">Download</span>
               </a>
             </Button>
           </div>

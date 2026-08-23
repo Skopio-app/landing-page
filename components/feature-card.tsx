@@ -41,7 +41,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           </span>
 
           <span className="flex min-w-0 flex-col gap-2.75">
-            <span className="flex items-start gap-2.75">
+            <span className="flex items-center gap-2.75">
               <Icon
                 aria-hidden="true"
                 className="feature-card__icon size-6.5 shrink-0 sm:size-9"

@@ -60,11 +60,11 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.62),
     0 1px 2px rgba(0, 0, 0, 0.04);
   transition:
-    transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease,
+    box-shadow 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .feature-card[data-active="true"] {
@@ -101,11 +101,11 @@ body {
   border-radius: 0 999px 999px 0;
   background: #ffffff;
   opacity: 0;
-  transform: scaleY(0.45);
+  transform: scaleY(0.2);
   transform-origin: center;
   transition:
-    opacity 160ms ease,
-    transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+    opacity 360ms ease,
+    transform 480ms cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .feature-card[data-active="true"] .feature-card__marker {
@@ -118,10 +118,10 @@ body {
 .feature-card__title,
 .feature-card__description {
   transition:
-    background-color 180ms ease,
-    color 180ms ease,
-    opacity 180ms ease,
-    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    background-color 300ms ease,
+    color 300ms ease,
+    opacity 300ms ease,
+    transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .feature-card__number {

@@ -1,5 +1,6 @@
 import SiteNavbar from "@/components/site-navbar";
 import SiteHeader from "@/components/site-header";
+import FeaturesSection from "@/components/features-section";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <SiteNavbar />
       <main>
         <SiteHeader />
+        <FeaturesSection />
       </main>
     </div>
   );

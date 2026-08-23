@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   GanttChart,
   Goal,
@@ -11,6 +10,7 @@ import {
 import { useState } from "react";
 
 import FeatureCard from "@/components/feature-card";
+import SwipeableFeaturePreview from "@/components/swipeable-feature-preview";
 
 interface Feature {
   title: string;
@@ -18,7 +18,6 @@ interface Feature {
   image: string;
   imageAlt: string;
   icon: LucideIcon;
-  iconClassName: string;
 }
 
 const features: Feature[] = [
@@ -29,7 +28,6 @@ const features: Feature[] = [
     image: "/features/goals.png",
     imageAlt: "Skopio goals dashboard showing progress toward a coding goal",
     icon: Goal,
-    iconClassName: "text-amber-300",
   },
   {
     title: "View your activity trend",
@@ -38,7 +36,6 @@ const features: Feature[] = [
     image: "/features/dashboard.png",
     imageAlt: "Skopio activity dashboard showing daily trends and languages",
     icon: TrendingUp,
-    iconClassName: "text-emerald-400",
   },
   {
     title: "View your timeline of events",
@@ -47,7 +44,6 @@ const features: Feature[] = [
     image: "/features/timeline.png",
     imageAlt: "Skopio timeline showing categorized activity events",
     icon: GanttChart,
-    iconClassName: "text-sky-300",
   },
   {
     title: "View your yearly insights",
@@ -56,13 +52,11 @@ const features: Feature[] = [
     image: "/features/insights.png",
     imageAlt: "Skopio yearly insights showing activity and productivity data",
     icon: Sparkles,
-    iconClassName: "text-yellow-300",
   },
 ] as const;
 
 const FeaturesSection = () => {
   const [activeFeature, setActiveFeature] = useState(0);
-  const selectedFeature = features[activeFeature];
 
   return (
     <section
@@ -85,7 +79,6 @@ const FeaturesSection = () => {
               active={activeFeature === index}
               description={feature.description}
               icon={feature.icon}
-              iconClassName={feature.iconClassName}
               index={index}
               onSelect={() => setActiveFeature(index)}
               title={feature.title}
@@ -93,19 +86,11 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        <div
-          id="feature-preview"
-          aria-live="polite"
-          className="order-1 relative aspect-623/460 w-full overflow-hidden rounded-[10px] bg-[#d9d9d9] shadow-[0_22px_70px_rgba(0,0,0,0.12)] min-[1180px]:order-2"
-        >
-          <Image
-            key={selectedFeature.image}
-            src={selectedFeature.image}
-            alt={selectedFeature.imageAlt}
-            fill
-            className="object-contain"
-            loading="eager"
-            sizes="(min-width: 1024px) 623px, calc(100vw - 40px)"
+        <div className="order-1 min-[1180px]:order-2">
+          <SwipeableFeaturePreview
+            activeIndex={activeFeature}
+            items={features}
+            onActiveIndexChange={setActiveFeature}
           />
         </div>
       </div>

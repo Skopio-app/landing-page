@@ -39,6 +39,7 @@ const SwipeableFeaturePreview: React.FC<SwipeableFeaturePreviewProps> = ({
   const viewportRef = useRef<HTMLDivElement>(null);
   const scrollFrameRef = useRef<number | null>(null);
   const mouseDragRef = useRef<MouseDragState | null>(null);
+  const programmaticTargetRef = useRef<number | null>(null);
   const skipNextActiveSyncRef = useRef(false);
 
   const scrollToIndex = useCallback(
@@ -51,9 +52,17 @@ const SwipeableFeaturePreview: React.FC<SwipeableFeaturePreviewProps> = ({
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
+      const targetLeft = nextIndex * viewport.clientWidth;
+
+      if (Math.abs(viewport.scrollLeft - targetLeft) < 1) {
+        programmaticTargetRef.current = null;
+        return;
+      }
+
+      programmaticTargetRef.current = nextIndex;
 
       viewport.scrollTo({
-        left: nextIndex * viewport.clientWidth,
+        left: targetLeft,
         behavior: reduceMotion ? "auto" : behavior,
       });
     },
@@ -98,6 +107,18 @@ const SwipeableFeaturePreview: React.FC<SwipeableFeaturePreviewProps> = ({
 
       if (!viewport || viewport.clientWidth === 0) return;
 
+      const programmaticTarget = programmaticTargetRef.current;
+
+      if (programmaticTarget !== null) {
+        const targetLeft = programmaticTarget * viewport.clientWidth;
+
+        if (Math.abs(viewport.scrollLeft - targetLeft) < 1) {
+          programmaticTargetRef.current = null;
+        }
+
+        return;
+      }
+
       const nextIndex = clampIndex(
         Math.round(viewport.scrollLeft / viewport.clientWidth),
         items.length,
@@ -111,6 +132,8 @@ const SwipeableFeaturePreview: React.FC<SwipeableFeaturePreviewProps> = ({
   };
 
   const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    programmaticTargetRef.current = null;
+
     if (event.pointerType !== "mouse") return;
 
     const viewport = event.currentTarget;
@@ -183,6 +206,9 @@ const SwipeableFeaturePreview: React.FC<SwipeableFeaturePreviewProps> = ({
         onPointerMove={handlePointerMove}
         onPointerUp={finishMouseDrag}
         onScroll={handleScroll}
+        onWheel={() => {
+          programmaticTargetRef.current = null;
+        }}
         className="no-scrollbar flex size-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth outline-none select-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-black/25 motion-reduce:scroll-auto"
       >
         {items.map((item, index) => (

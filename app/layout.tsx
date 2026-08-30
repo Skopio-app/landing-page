@@ -3,7 +3,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Skopio",
-  description: "Track your app usage and coding statistics with Skopio.",
+  description: "Skopio is a macOS activity tracking application.",
+  applicationName: "Skopio",
+  icons: {
+    icon: "/assets/skopio-app-icon.png",
+    shortcut: "/assets/skopio-app-icon.png",
+    apple: "/assets/skopio-app-icon.png",
+  },
 };
 
 export default function RootLayout({

@@ -21,7 +21,7 @@ const DataSection = () => (
   <section
     id="data"
     aria-labelledby="data-title"
-    className="mx-auto w-full max-w-360 px-5 py-24 sm:px-8 sm:py-32 lg:px-17.5"
+    className="page-section mx-auto w-full max-w-360 px-5 py-24 sm:px-8 sm:py-32 lg:px-17.5"
   >
     <div className="mx-auto flex w-full max-w-315 flex-col items-center">
       <div className="text-center text-black">

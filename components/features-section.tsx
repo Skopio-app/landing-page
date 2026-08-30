@@ -10,13 +10,12 @@ import {
 import { useState } from "react";
 
 import FeatureCard from "@/components/feature-card";
-import SwipeableFeaturePreview from "@/components/swipeable-feature-preview";
+import SwipeableFeaturePreview, {
+  FeaturePreviewItem,
+} from "@/components/swipeable-feature-preview";
 
-interface Feature {
-  title: string;
+interface Feature extends FeaturePreviewItem {
   description: string;
-  image: string;
-  imageAlt: string;
   icon: LucideIcon;
 }
 
@@ -25,7 +24,7 @@ const features: Feature[] = [
     title: "Set goals and track progress",
     description:
       "Set achievable daily, weekly, monthly, or yearly goals and keep track of your progress.",
-    image: "/features/goals.png",
+    image: "goals.png",
     imageAlt: "Skopio goals dashboard showing progress toward a coding goal",
     icon: Goal,
   },
@@ -33,7 +32,7 @@ const features: Feature[] = [
     title: "View your activity trend",
     description:
       "See exactly where your time goes day after day, and even view your AFK stats.",
-    image: "/features/dashboard.png",
+    image: "dashboard.png",
     imageAlt: "Skopio activity dashboard showing daily trends and languages",
     icon: TrendingUp,
   },
@@ -41,7 +40,7 @@ const features: Feature[] = [
     title: "View your timeline of events",
     description:
       "View captured events via a scrubbable timeline and drill down to see exactly how your time is spent.",
-    image: "/features/timeline.png",
+    image: "timeline.png",
     imageAlt: "Skopio timeline showing categorized activity events",
     icon: GanttChart,
   },
@@ -49,11 +48,11 @@ const features: Feature[] = [
     title: "View your yearly insights",
     description:
       "See your total logged time, top projects, top programming languages, and your most active day.",
-    image: "/features/insights.png",
+    image: "insights.png",
     imageAlt: "Skopio yearly insights showing activity and productivity data",
     icon: Sparkles,
   },
-] as const;
+];
 
 const FeaturesSection = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -62,7 +61,7 @@ const FeaturesSection = () => {
     <section
       id="features"
       aria-labelledby="features-title"
-      className="mx-auto w-full max-w-360 px-5 py-24 sm:px-8 lg:pl-17.5 lg:pr-27.5"
+      className="page-section mx-auto w-full max-w-360 px-5 py-24 sm:px-8 lg:pl-17.5 lg:pr-27.5"
     >
       <h2
         id="features-title"

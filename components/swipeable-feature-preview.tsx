@@ -7,7 +7,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-interface FeaturePreviewItem {
+export interface FeaturePreviewItem {
   image: string;
   imageAlt: string;
   title: string;
@@ -221,7 +221,7 @@ const SwipeableFeaturePreview: React.FC<SwipeableFeaturePreviewProps> = ({
             className="relative size-full shrink-0 snap-center"
           >
             <Image
-              src={item.image}
+              src={`/features/${item.image}`}
               alt={item.imageAlt}
               fill
               draggable={false}

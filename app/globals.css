@@ -44,6 +44,19 @@ body {
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
+.page-section {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-header-section {
+  min-height: calc(100vh - 6.8125rem);
+  min-height: calc(100svh - 6.8125rem);
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }

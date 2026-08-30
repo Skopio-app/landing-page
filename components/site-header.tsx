@@ -12,7 +12,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
   macIntelHref = "#download-mac-intel",
 }) => {
   return (
-    <header className="mx-auto mt-10 flex w-full max-w-203.75 flex-col items-center gap-12 px-5 pb-16 sm:mt-14.25 sm:gap-14.25 sm:px-8">
+    <header className="page-section site-header-section mx-auto w-full max-w-203.75 items-center gap-12 px-5 py-16 sm:gap-14.25 sm:px-8 sm:py-20">
       <div className="flex w-full max-w-172.5 flex-col items-center gap-3 text-center">
         <Image
           src="/assets/skopio-app-icon.png"

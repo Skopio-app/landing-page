@@ -34,7 +34,7 @@ const PluginsSection = () => (
   <section
     id="plugins"
     aria-labelledby="plugins-title"
-    className="mx-auto w-full max-w-360 px-5 py-24 sm:px-8 sm:py-32 lg:px-10"
+    className="page-section mx-auto w-full max-w-360 px-5 py-24 sm:px-8 sm:py-32 lg:px-10"
   >
     <div className="mx-auto text-center text-black">
       <h2

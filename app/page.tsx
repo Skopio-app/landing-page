@@ -3,6 +3,7 @@ import SiteHeader from "@/components/site-header";
 import FeaturesSection from "@/components/features-section";
 import DataSection from "@/components/data-section";
 import PluginsSection from "@/components/plugins-section";
+import SiteFooter from "@/components/site-footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <DataSection />
         <PluginsSection />
       </main>
+      <SiteFooter />
     </div>
   );
 }

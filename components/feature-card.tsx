@@ -24,7 +24,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <Card
       data-active={active}
-      className="feature-card relative min-h-40.5 w-full gap-0 overflow-hidden rounded-[10px] border-2 py-0 shadow-none"
+      className="feature-card relative h-full min-h-36 w-full gap-0 overflow-hidden rounded-[10px] border-2 py-0 shadow-none"
     >
       <CardContent className="h-full p-0">
         <button
@@ -32,7 +32,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           aria-controls="feature-preview"
           aria-pressed={active}
           onClick={onSelect}
-          className="feature-card__button grid min-h-39 w-full grid-cols-[46px_minmax(0,1fr)] items-center gap-4 px-4 py-3 text-left outline-none sm:grid-cols-[54px_minmax(0,1fr)] sm:gap-9.25 sm:px-6.75 sm:py-2.75"
+          className="feature-card__button grid h-full min-h-34 w-full grid-cols-[46px_minmax(0,1fr)] items-center gap-3 px-4 py-2.5 text-left outline-none sm:grid-cols-[54px_minmax(0,1fr)] sm:gap-9.25 sm:px-6.75 sm:py-2.75"
         >
           <span aria-hidden="true" className="feature-card__marker" />
 

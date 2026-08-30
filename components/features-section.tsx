@@ -70,8 +70,8 @@ const FeaturesSection = () => {
         Here are some of the features you can expect
       </h2>
 
-      <div className="mt-14.25 grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,520px)_minmax(0,623px)] min-[1180px]:justify-between min-[1180px]:gap-0">
-        <div className="order-2 grid w-full auto-rows-fr gap-6.25 min-[1180px]:order-1">
+      <div className="mt-14.25 grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,480px)_minmax(0,623px)] min-[1180px]:justify-between min-[1180px]:gap-0">
+        <div className="order-2 grid w-full auto-rows-fr gap-5 min-[1180px]:order-1">
           {features.map((feature, index) => (
             <FeatureCard
               key={feature.title}

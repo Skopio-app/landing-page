@@ -24,7 +24,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <Card
       data-active={active}
-      className="feature-card relative h-full min-h-36 w-full gap-0 overflow-hidden rounded-[10px] border-2 py-0 shadow-none"
+      className="feature-card relative h-full min-h-32 w-full gap-0 overflow-hidden rounded-[10px] border-2 py-0 shadow-none"
     >
       <CardContent className="h-full p-0">
         <button
@@ -32,26 +32,26 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           aria-controls="feature-preview"
           aria-pressed={active}
           onClick={onSelect}
-          className="feature-card__button grid h-full min-h-34 w-full grid-cols-[46px_minmax(0,1fr)] items-center gap-3 px-4 py-2.5 text-left outline-none sm:grid-cols-[54px_minmax(0,1fr)] sm:gap-9.25 sm:px-6.75 sm:py-2.75"
+          className="feature-card__button grid h-full min-h-30 w-full grid-cols-[42px_minmax(0,1fr)] items-center gap-3 px-4 py-3 text-left outline-none sm:grid-cols-[46px_minmax(0,1fr)] sm:gap-6 sm:px-5.5 sm:py-3"
         >
           <span aria-hidden="true" className="feature-card__marker" />
 
-          <span className="feature-card__number flex size-11.5 shrink-0 items-center justify-center rounded-full text-xl leading-none font-semibold sm:size-13.5 sm:text-[32px]">
+          <span className="feature-card__number flex size-10.5 shrink-0 items-center justify-center rounded-full text-lg leading-none font-semibold sm:size-11.5 sm:text-2xl">
             {itemNumber}
           </span>
 
-          <span className="flex min-w-0 flex-col gap-2.75">
-            <span className="flex items-center gap-2.75">
+          <span className="flex min-w-0 flex-col gap-2.25">
+            <span className="flex items-center gap-2.25">
               <Icon
                 aria-hidden="true"
-                className="feature-card__icon size-6.5 shrink-0 sm:size-9"
+                className="feature-card__icon size-5.5 shrink-0 sm:size-7"
                 strokeWidth={1.8}
               />
-              <span className="feature-card__title text-xl leading-normal font-semibold sm:text-2xl">
+              <span className="feature-card__title text-lg leading-normal font-semibold sm:text-xl">
                 {title}
               </span>
             </span>
-            <span className="feature-card__description text-base leading-normal font-medium sm:text-lg">
+            <span className="feature-card__description text-sm leading-normal font-medium sm:text-base">
               {description}
             </span>
           </span>

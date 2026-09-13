@@ -25,13 +25,13 @@ const DownloadAction: React.FC<DownloadActionProps> = ({
     <Button
       asChild
       className={cn(
-        "h-17.5 w-full max-w-115.75 rounded-[10px] border px-5 text-lg font-normal sm:h-20.75 sm:text-2xl",
+        "h-13 w-full max-w-105 gap-2.5 rounded-lg border px-4 text-base font-normal sm:h-15 sm:px-5 sm:text-xl",
         platformStyles[platform],
       )}
     >
       <a href={href} aria-label={label}>
         {platform === "apple-silicon" ? (
-          <SiApple aria-hidden="true" className="size-6.75 shrink-0" />
+          <SiApple aria-hidden="true" className="size-5 shrink-0 sm:size-5.5" />
         ) : null}
         <span>{label}</span>
       </a>

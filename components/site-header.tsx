@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import DownloadAction from "@/components/download-action";
+import MatrixRain from "@/components/matrix-rain";
 
 interface SiteHeaderProps {
   appleSiliconHref?: string;
@@ -12,8 +13,10 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
   macIntelHref = "#download-mac-intel",
 }) => {
   return (
-    <header className="page-section site-header-section mx-auto w-full max-w-203.75 items-center gap-12 px-5 py-16 sm:gap-14.25 sm:px-8 sm:py-20">
-      <div className="flex w-full max-w-172.5 flex-col items-center gap-3 text-center">
+    <header className="page-section site-header-section relative isolate mx-auto w-full max-w-360 items-center gap-12 overflow-hidden px-5 py-16 sm:gap-14.25 sm:px-8 sm:py-20">
+      <MatrixRain />
+
+      <div className="relative z-10 flex w-full max-w-172.5 flex-col items-center gap-3 text-center">
         <Image
           src="/assets/skopio-app-icon.png"
           alt="Skopio app icon"
@@ -37,7 +40,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
         </p>
       </div>
 
-      <div className="flex w-full flex-col items-center gap-3.75">
+      <div className="relative z-10 flex w-full flex-col items-center gap-3.75">
         <DownloadAction
           href={appleSiliconHref}
           label="Download for Apple Silicon"

@@ -6,14 +6,17 @@ const dataBenefits: DataBenefitProps[] = [
   {
     description: "Data captured stays fully on device",
     icon: ShieldLock,
+    iconAnimation: "lock",
   },
   {
     description: "Skopio is fully usable even when offline",
     icon: CloudOff,
+    iconAnimation: "cloud",
   },
   {
     description: "Easily review your effort across projects",
     icon: ClipboardCheck,
+    iconAnimation: "check",
   },
 ];
 

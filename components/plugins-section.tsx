@@ -1,34 +1,5 @@
-import PluginItem, { PluginItemProps } from "@/components/plugin-item";
-
-const plugins: PluginItemProps[] = [
-  { image: "android-studio.png", name: "Android Studio" },
-  { image: "antigravity.png", name: "Antigravity" },
-  { image: "appcode.png", name: "AppCode" },
-  { image: "brave.png", name: "Brave" },
-  { image: "chrome.png", name: "Chrome" },
-  { image: "clion.png", name: "CLion" },
-  { image: "cursor.png", name: "Cursor" },
-  { image: "datagrip.png", name: "DataGrip" },
-  { image: "dataspell.png", name: "DataSpell" },
-  { image: "dia.png", name: "Dia" },
-  { image: "figma.png", name: "Figma" },
-  { image: "firefox.png", name: "Firefox" },
-  { image: "goland.png", name: "GoLand" },
-  { image: "intellij-idea.png", name: "IntelliJ IDEA" },
-  { image: "phpstorm.png", name: "PhpStorm" },
-  { image: "postman.png", name: "Postman" },
-  { image: "pycharm.png", name: "PyCharm" },
-  { image: "rider.png", name: "Rider" },
-  { image: "rubymine.png", name: "RubyMine" },
-  { image: "rustrover.png", name: "RustRover" },
-  { image: "safari.png", name: "Safari" },
-  { image: "terminal.png", name: "Terminal" },
-  { image: "vs-code.png", name: "VS Code" },
-  { image: "warp.png", name: "Warp" },
-  { image: "webstorm.png", name: "WebStorm" },
-  { image: "xcode.png", name: "Xcode" },
-  { image: "zed.png", name: "Zed" },
-];
+import PluginItem from "@/components/plugin-item";
+import { integrations } from "@/lib/integrations";
 
 const PluginsSection = () => (
   <section
@@ -50,7 +21,7 @@ const PluginsSection = () => (
     </div>
 
     <div className="mx-auto mt-16.75 grid w-full max-w-332 grid-cols-2 justify-items-center gap-x-5.5 gap-y-16 sm:grid-cols-3 sm:gap-y-21.5 lg:grid-cols-5">
-      {plugins.map((plugin) => (
+      {integrations.map((plugin) => (
         <PluginItem key={plugin.name} {...plugin} />
       ))}
     </div>

@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 interface SiteNavbarProps {
   downloadHref?: string;
   githubHref?: string;
+  homeHref?: string;
 }
 
 const SiteNavbar: React.FC<SiteNavbarProps> = ({
   downloadHref = "https://github.com/Skopio-app/desktop-releases/releases/download/v0.1.19/Skopio_0.1.19_aarch64.dmg",
   githubHref = "https://github.com/Skopio-app/skopio",
+  homeHref = "/",
 }) => {
   return (
     <header className="site-navbar sticky top-0 z-50 h-27.25 w-full" id="top">
@@ -19,7 +21,7 @@ const SiteNavbar: React.FC<SiteNavbarProps> = ({
       >
         <div className="flex h-14.5 w-full items-center justify-between">
           <a
-            href="#top"
+            href={homeHref}
             className="rounded-sm text-[28px] font-bold leading-none tracking-normal text-black outline-none focus-visible:ring-4 focus-visible:ring-black/20 sm:text-[32px]"
             aria-label="Skopio home"
           >

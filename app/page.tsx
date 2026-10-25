@@ -8,7 +8,7 @@ import SiteFooter from "@/components/site-footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <SiteNavbar />
+      <SiteNavbar homeHref="#top" />
       <main>
         <SiteHeader />
         <FeaturesSection />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Database, HardDrive, ShieldCheck } from "lucide-react";
 
+import PrivacyTableOfContents from "@/components/privacy-table-of-contents";
 import SiteFooter from "@/components/site-footer";
 import SiteNavbar from "@/components/site-navbar";
 
@@ -50,21 +51,7 @@ const PrivacyPage = () => (
 
       <div className="mx-auto grid w-full max-w-290 gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-20 lg:px-0">
         <aside className="lg:sticky lg:top-36 lg:self-start">
-          <nav aria-label="Privacy policy sections">
-            <h2 className="text-sm font-semibold text-black">On this page</h2>
-            <ol className="mt-4 space-y-2 border-l border-black/15">
-              {sections.map(({ id, label }) => (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    className="block border-l border-transparent py-1 pl-4 text-sm leading-6 text-black/55 transition-colors hover:border-black hover:text-black focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
+          <PrivacyTableOfContents sections={sections} />
         </aside>
 
         <article className="min-w-0 max-w-3xl text-[1.0625rem] leading-8 text-black/70">

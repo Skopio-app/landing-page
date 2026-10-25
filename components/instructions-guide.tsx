@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { ArrowLeft, ArrowUpRight, Check, Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
   type Integration,
   JETBRAINS_MARKETPLACE_URL,
+  JETBRAINS_REPOSITORY_URL,
   SKOPIO_DOWNLOAD_URL,
   VSCODE_MARKETPLACE_URL,
+  VSCODE_REPOSITORY_URL,
 } from "@/lib/integrations";
 
 interface InstructionStep {
@@ -33,6 +36,7 @@ const getGuideContent = (integration: Integration) => {
       description: `Install the Skopio extension in ${name} to capture coding, debugging, compiling, documentation, testing, and review activity.`,
       actionLabel: "Find the JetBrains extension",
       actionHref: JETBRAINS_MARKETPLACE_URL,
+      repositoryHref: JETBRAINS_REPOSITORY_URL,
       steps: [
         {
           title: "Open the Plugins settings",
@@ -64,6 +68,7 @@ const getGuideContent = (integration: Integration) => {
       description: `Install the Skopio VS Code extension in ${name} to capture detailed coding activity and sync it with your local dashboard.`,
       actionLabel: "Open the VS Code Marketplace",
       actionHref: VSCODE_MARKETPLACE_URL,
+      repositoryHref: VSCODE_REPOSITORY_URL,
       steps: [
         {
           title: "Open Extensions",
@@ -100,6 +105,7 @@ const getGuideContent = (integration: Integration) => {
     description: `Skopio tracks time spent in ${name} directly from the macOS app, so there is no separate extension to install.`,
     actionLabel: "Download Skopio for macOS",
     actionHref: SKOPIO_DOWNLOAD_URL,
+    repositoryHref: undefined,
     steps: [
       {
         title: "Install and open Skopio",
@@ -192,14 +198,32 @@ const InstructionsGuide: React.FC<InstructionsGuideProps> = ({
           </Button>
 
           {usesExtension ? (
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-13 rounded-lg border-black/15 px-6 text-base font-semibold shadow-none"
-            >
-              <a href={SKOPIO_DOWNLOAD_URL}>Get the desktop app</a>
-            </Button>
+            <>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-13 rounded-lg border-black/15 px-6 text-base font-semibold shadow-none"
+              >
+                <a href={SKOPIO_DOWNLOAD_URL}>Get the desktop app</a>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-13 rounded-lg border-black/15 px-6 text-base font-semibold shadow-none"
+              >
+                <a
+                  href={content.repositoryHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SiGithub aria-hidden="true" />
+                  View source
+                </a>
+              </Button>
+            </>
           ) : null}
         </div>
       </section>

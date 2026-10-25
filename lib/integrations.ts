@@ -7,6 +7,12 @@ export const VSCODE_MARKETPLACE_URL =
 export const JETBRAINS_MARKETPLACE_URL =
   "https://plugins.jetbrains.com/search?search=Skopio";
 
+export const JETBRAINS_REPOSITORY_URL =
+  "https://github.com/Skopio-app/skopio-jetbrains";
+
+export const VSCODE_REPOSITORY_URL =
+  "https://github.com/Skopio-app/skopio-vscode";
+
 export type InstallationType = "app" | "jetbrains" | "vscode" | "pending";
 
 export interface Integration {

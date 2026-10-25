@@ -6,8 +6,7 @@ export const metadata: Metadata = {
   description: "Skopio is a macOS activity tracking application.",
   applicationName: "Skopio",
   icons: {
-    icon: "/assets/skopio-app-icon.png",
-    shortcut: "/assets/skopio-app-icon.png",
+    shortcut: "/favicon.ico",
     apple: "/assets/skopio-app-icon.png",
   },
 };

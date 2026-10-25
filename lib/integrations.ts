@@ -1,5 +1,10 @@
-export const SKOPIO_DOWNLOAD_URL =
+export const SKOPIO_APPLE_SILICON_DOWNLOAD_URL =
   "https://github.com/Skopio-app/desktop-releases/releases/download/v0.1.19/Skopio_0.1.19_aarch64.dmg";
+
+export const SKOPIO_INTEL_DOWNLOAD_URL =
+  "https://github.com/Skopio-app/desktop-releases/releases/download/v0.1.19/Skopio_0.1.19_x64.dmg";
+
+export const SKOPIO_DOWNLOAD_URL = SKOPIO_APPLE_SILICON_DOWNLOAD_URL;
 
 export const VSCODE_MARKETPLACE_URL =
   "https://marketplace.visualstudio.com/items?itemName=Skopio.skopio-vscode";

@@ -2,6 +2,7 @@ import { SiApple, SiGithub } from "@icons-pack/react-simple-icons";
 import { ArrowDownToLine } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { SKOPIO_APPLE_SILICON_DOWNLOAD_URL } from "@/lib/integrations";
 
 interface SiteNavbarProps {
   downloadHref?: string;
@@ -10,7 +11,7 @@ interface SiteNavbarProps {
 }
 
 const SiteNavbar: React.FC<SiteNavbarProps> = ({
-  downloadHref = "https://github.com/Skopio-app/desktop-releases/releases/download/v0.1.19/Skopio_0.1.19_aarch64.dmg",
+  downloadHref = SKOPIO_APPLE_SILICON_DOWNLOAD_URL,
   githubHref = "https://github.com/Skopio-app/skopio",
   homeHref = "/",
 }) => {

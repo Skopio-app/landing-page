@@ -2,6 +2,10 @@ import Image from "next/image";
 
 import DownloadAction from "@/components/download-action";
 import MatrixRain from "@/components/matrix-rain";
+import {
+  SKOPIO_APPLE_SILICON_DOWNLOAD_URL,
+  SKOPIO_INTEL_DOWNLOAD_URL,
+} from "@/lib/integrations";
 
 interface SiteHeaderProps {
   appleSiliconHref?: string;
@@ -9,8 +13,8 @@ interface SiteHeaderProps {
 }
 
 const SiteHeader: React.FC<SiteHeaderProps> = ({
-  appleSiliconHref = "#download-apple-silicon",
-  macIntelHref = "#download-mac-intel",
+  appleSiliconHref = SKOPIO_APPLE_SILICON_DOWNLOAD_URL,
+  macIntelHref = SKOPIO_INTEL_DOWNLOAD_URL,
 }) => {
   return (
     <header className="page-section site-header-section relative isolate mx-auto w-full max-w-360 items-center gap-12 overflow-hidden px-5 py-16 sm:gap-14.25 sm:px-8 sm:py-20">

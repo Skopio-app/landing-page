@@ -40,7 +40,17 @@ const SiteFooter: React.FC<SiteFooterProps> = ({
         <div className="border-t border-black/30 py-10">
           <p className="flex items-center gap-4.75 text-base leading-[normal] text-black">
             <CodeXml aria-hidden="true" className="size-7.5 shrink-0" />
-            <span>Made by Samuel Wahome</span>
+            <span>
+              Made by{" "}
+              <a
+                href="https://samwahome.com"
+                target="_blank"
+                rel="noreferrer"
+                className="footer-link rounded-sm transition-colors hover:text-black/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4"
+              >
+                Samuel Wahome
+              </a>
+            </span>
           </p>
         </div>
       </div>

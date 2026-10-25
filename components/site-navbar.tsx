@@ -1,4 +1,5 @@
 import { SiApple, SiGithub } from "@icons-pack/react-simple-icons";
+import { ArrowDownToLine } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -46,12 +47,12 @@ const SiteNavbar: React.FC<SiteNavbarProps> = ({
 
             <Button
               asChild
-              variant="secondary"
-              className="size-11 gap-3 rounded-lg bg-[#d9d9d9] p-0 text-base font-semibold text-black hover:bg-[#cfcfcf] focus-visible:ring-black/30 min-[360px]:h-11 min-[360px]:w-auto min-[360px]:px-4 sm:h-14.5 sm:w-46.75 sm:px-6"
+              className="group size-11 gap-2.5 rounded-xl border border-black bg-black p-0 text-sm font-semibold text-white shadow-[0_8px_22px_rgba(0,0,0,0.16)] transition-[transform,background-color,box-shadow] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-zinc-900 hover:shadow-[0_11px_28px_rgba(0,0,0,0.22)] focus-visible:ring-black/30 active:scale-[0.97] min-[380px]:h-11 min-[380px]:w-auto min-[380px]:px-4 sm:h-14.5 sm:rounded-2xl sm:px-5 sm:text-base motion-reduce:transform-none motion-reduce:transition-none"
             >
               <a href={downloadHref} aria-label="Download Skopio">
-                <SiApple className="size-6 text-white sm:size-7" />
-                <span className="hidden min-[360px]:inline">Download</span>
+                <SiApple className="size-5.5 sm:size-6" />
+                <span className="hidden min-[380px]:inline">Download</span>
+                <ArrowDownToLine className="hidden size-4 text-white/60 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0.5 sm:block motion-reduce:transform-none motion-reduce:transition-none" />
               </a>
             </Button>
           </div>

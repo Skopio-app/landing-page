@@ -40,7 +40,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
         </p>
       </div>
 
-      <div className="relative z-10 flex w-full flex-col items-center gap-3.75">
+      <div className="relative z-10 grid w-full max-w-105 gap-3 md:max-w-175 md:grid-cols-2 md:gap-4">
         <DownloadAction
           href={appleSiliconHref}
           label="Download for Apple Silicon"
@@ -48,7 +48,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
         />
         <DownloadAction
           href={macIntelHref}
-          label="Mac Intel Download"
+          label="Download for Intel Mac"
           platform="mac-intel"
         />
       </div>

@@ -344,6 +344,41 @@ body {
   backdrop-filter: blur(24px) saturate(180%);
 }
 
+.plugin-item {
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.plugin-item__icon {
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .plugin-item:hover {
+    background: #f4f4f5;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
+  }
+
+  .plugin-item:hover .plugin-item__icon {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plugin-item,
+  .plugin-item__icon {
+    transition: none;
+  }
+
+  .plugin-item:hover,
+  .plugin-item:hover .plugin-item__icon {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-transparency: reduce) {
   .site-navbar {
     background: rgba(255, 255, 255, 0.96);

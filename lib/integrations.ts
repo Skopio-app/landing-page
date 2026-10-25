@@ -5,7 +5,7 @@ export const VSCODE_MARKETPLACE_URL =
   "https://marketplace.visualstudio.com/items?itemName=Skopio.skopio-vscode";
 
 export const JETBRAINS_MARKETPLACE_URL =
-  "https://plugins.jetbrains.com/search?search=Skopio";
+  "https://plugins.jetbrains.com/plugin/29817-skopio";
 
 export const JETBRAINS_REPOSITORY_URL =
   "https://github.com/Skopio-app/skopio-jetbrains";
